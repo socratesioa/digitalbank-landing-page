@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+.hero-test {
+  margin-bottom: 56px;
+}
+
+.test-container {
+  display: grid;
+  gap: 48px;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-pattern {
+  position: relative;
+  height: 100%;
+  top: -94px;
+  z-index: 1;
+}
+
+.hero-pattern-img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-image {
+  position: absolute;
+  top: -130px;
+  padding: 0 24px;
+  z-index: 2;
+}
+
+.hero-image-img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.hero-content {
+  padding: 0 24px;
+}

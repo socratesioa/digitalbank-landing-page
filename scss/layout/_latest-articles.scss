@@ -1,0 +1,73 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+.latest-articles {
+  margin-bottom: 64px;
+  padding: 0 24px;
+  display: grid;
+  gap: 48px;
+  @include respond(small, min) {
+    padding: 0 80px;
+    gap: 64px;
+    margin-bottom: 80px;
+  }
+  @include respond(large, min) {
+    padding: 0;
+    max-width: 1116px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 83px;
+  }
+}
+
+.latest-articles-container {
+  display: grid;
+  gap: 16px;
+  align-items: stretch;
+  @include respond(small, min) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(large, min) {
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.article-latest {
+  background-color: $clr-body-text-white;
+  border-radius: 5px 5px 0 0;
+}
+
+.article-img {
+  aspect-ratio: 328 / 200;
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+  @include respond(small, min) {
+    aspect-ratio: 296 / 200;
+  }
+  @include respond(large, min) {
+    aspect-ratio: 255 / 200;
+  }
+}
+
+.article-contents {
+  padding: 24px 31.5px;
+  @include text-preset(typo.$body-s);
+  @include respond(small, min) {
+    padding: 24px 40px;
+  }
+  @include respond(large, min) {
+    padding: 24px 19.5px;
+  }
+}
+
+.article-heading {
+  @include text-preset(typo.$heading-s);
+  margin-bottom: 8px;
+}
+
+.author {
+  @include text-preset(typo.$body-xs);
+  margin-bottom: 16px;
+}

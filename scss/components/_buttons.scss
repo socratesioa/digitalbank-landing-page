@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+.primary-btn {
+  @include text-preset(typo.$buttons);
+  color: $clr-body-text-white;
+  text-decoration: none;
+  outline: none;
+  padding: 8px 32px;
+  border-radius: 22px;
+  background: $primary-gradient;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 100%, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.primary-btn:hover::before {
+  opacity: 1;
+}
+
+.primary-btn:focus-visible {
+  outline-offset: 4px;
+  outline: 2px solid $clr-accent;
+}
+
+.hamburger {
+  border: none;
+  outline: none;
+  background: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  @include respond(large, min) {
+    display: none;
+  }
+}
+
+.hamburger:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid $clr-accent;
+}

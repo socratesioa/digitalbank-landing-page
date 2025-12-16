@@ -1,0 +1,126 @@
+@use "../abstracts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font-body: "Public Sans", sans-serif;
+
+$heading-xl: (
+  family: $font-body,
+  size: 56px,
+  lineHeight: 1.2,
+  letterSpacing: -1px,
+  weight: 300,
+);
+
+$heading-xl-mobile: (
+  family: $font-body,
+  size: 40px,
+  lineHeight: 1.2,
+  letterSpacing: -0.75px,
+  weight: 300,
+);
+
+$heading-l: (
+  family: $font-body,
+  size: 40px,
+  lineHeight: 1.2,
+  letterSpacing: -0.75px,
+  weight: 300,
+);
+
+$heading-l-mobile: (
+  family: $font-body,
+  size: 32px,
+  lineHeight: 1.2,
+  letterSpacing: -0.5px,
+  weight: 300,
+);
+
+$heading-m: (
+  family: $font-body,
+  size: 24px,
+  lineHeight: 1.15,
+  letterSpacing: -0.4px,
+  weight: 300,
+);
+
+$heading-s: (
+  family: $font-body,
+  size: 16px,
+  lineHeight: 1.2,
+  letterSpacing: -0.25px,
+  weight: 300,
+);
+
+$body-xs: (
+  family: $font-body,
+  size: 10px,
+  lineHeight: 1.15,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$body-s: (
+  family: $font-body,
+  size: 14px,
+  lineHeight: 1.15,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$body-m: (
+  family: $font-body,
+  size: 16px,
+  lineHeight: 26px,
+  letterSpacing: -0.25px,
+  weight: 400,
+);
+
+$body-l: (
+  family: $font-body,
+  size: 18px,
+  lineHeight: 1.55,
+  letterSpacing: -0.25px,
+  weight: 400,
+);
+
+$buttons: (
+  family: $font-body,
+  size: 14px,
+  lineHeight: 2,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+h1 {
+  @include text-preset($heading-xl-mobile);
+  color: $clr-body-text-dark;
+  @include respond(small, min) {
+    @include text-preset($heading-xl);
+  }
+}
+
+h2 {
+  @include text-preset($heading-l-mobile);
+  color: $clr-body-text-dark;
+  text-align: center;
+  @include respond(small, min) {
+    @include text-preset($heading-l);
+  }
+  @include respond(large, min) {
+    text-align: left;
+  }
+}
+
+h3 {
+  @include text-preset($heading-m);
+  color: $clr-body-text-dark;
+}
+
+body {
+  font-family: $font-body;
+  @include text-preset($body-s);
+  @include respond(small, min) {
+    @include text-preset($body-l);
+  }
+}

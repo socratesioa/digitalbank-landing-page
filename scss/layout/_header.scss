@@ -1,0 +1,112 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+header {
+  background-color: $clr-header-bg;
+  padding: 8px 24px;
+  position: relative;
+  z-index: 999;
+  @include respond(small, min) {
+    padding: 8px 80px;
+  }
+  @include respond(large, min) {
+    padding: 18px 0;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(large, min) {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.primaryNav {
+  display: none;
+  @include respond(large, min) {
+    display: block;
+  }
+}
+
+.primaryNav.active {
+  display: block;
+  position: fixed;
+  top: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  background-color: $clr-header-bg;
+  padding: 32px;
+  border-radius: 4px;
+  z-index: 1001;
+  @include respond(small, min) {
+    width: calc(100% - 161px);
+  }
+}
+
+.primary-nav {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  text-align: center;
+  @include respond(large, min) {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  @include text-preset(typo.$body-l);
+  color: $clr-body-text-dark;
+  @include respond(large, min) {
+    @include text-preset(typo.$body-s);
+    color: $clr-body-text-light;
+    position: relative;
+    outline: none;
+    transition: color 0.3s ease;
+  }
+}
+
+.nav-link:focus-visible {
+  outline-offset: 4px;
+  outline: 2px solid $clr-accent;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: $clr-body-text-dark;
+}
+
+.nav-link::after {
+  @include respond(large, min) {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: transparent;
+    left: 0;
+    bottom: -32px;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+}
+
+.nav-link:hover::after {
+  @include respond(large, min) {
+    background-color: $clr-accent;
+  }
+}
+
+.nav-bar {
+  display: none;
+  @include respond(large, min) {
+    display: block;
+  }
+}

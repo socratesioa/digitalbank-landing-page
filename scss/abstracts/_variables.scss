@@ -1,0 +1,24 @@
+// COLOR PALETTE
+$white: #ffffff;
+$black: #000000;
+$gray600: #9597a5;
+$gray100: #f4f5f7;
+$gray50: #fafafa;
+$blue950: #2d314d;
+$green400: #30c88f;
+
+// SEMANTIC VALUES
+$primary-gradient: linear-gradient(82deg, #33d35e, #2ab6d9);
+$secondary-gradient: linear-gradient(
+  180deg,
+  hsla(231, 26%, 24%, 1),
+  hsla(231, 26%, 24%, 0.001)
+);
+$clr-body-bg: $gray50;
+$clr-section-bg: $gray100;
+$clr-header-bg: $white;
+$clr-footer-bg: $blue950;
+$clr-accent: $green400;
+$clr-body-text-dark: $blue950;
+$clr-body-text-light: $gray600;
+$clr-body-text-white: $white;
